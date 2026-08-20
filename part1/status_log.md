@@ -23,4 +23,7 @@ Untracked files:
   (use "git add <file>..." to include in what will be committed)
         draft.md
         status_log.md
+Difference between fetch and pull:
+git fetch only downloads updates from the remote repository to your local system without merging them.
+git pull does a fetch AND immediately merges those updates into your current local branch.
 
