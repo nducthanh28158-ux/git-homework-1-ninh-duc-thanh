@@ -1,0 +1,27 @@
+# PART A
+cd ~
+mkdir ex3
+cd ex3
+mkdir dir1 dir2
+touch HelloWorld.txt
+cp HelloWorld.txt dir1/
+cp -i HelloWorld.txt dir1/
+mv HelloWorld.txt Hi.txt
+mv Hi.txt dir2/
+
+# PART B
+ln dir2/Hi.txt Hi-hard
+ln dir2/Hi.txt dir1/Hi-hard
+ln dir2/Hi.txt dir2/Hi-hard
+ln -s dir2/Hi.txt Hi-sym
+rm Hi-hard
+rm dir2/Hi.txt
+
+# Output of ls -li commands:
+
+$ ls -li
+
+$ ls -li dir1
+$ ls -li dir2
+total 0
+37999121855998023 -rw-r--r-- 2 ASUS 197121 0 Sep 11 07:52 Hi-hard
