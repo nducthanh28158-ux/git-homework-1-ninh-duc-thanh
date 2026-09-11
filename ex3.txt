@@ -25,3 +25,40 @@ $ ls -li dir1
 $ ls -li dir2
 total 0
 37999121855998023 -rw-r--r-- 2 ASUS 197121 0 Sep 11 07:52 Hi-hard
+# PART C
+# 1. List /bin and /usr/bin, sort, remove duplicates, and count unique names
+ls /bin /usr/bin | sort | uniq | wc -l
+
+# 2. From the sorted list, find programs containing "zip"
+ls /bin /usr/bin | sort | uniq | grep "zip"
+
+# 3. Generate a 30-line file and perform prints/counts
+seq 1 30 > myfile.txt
+head -n 5 myfile.txt
+tail -n 5 myfile.txt
+wc myfile.txt
+
+# 4. List directory and save to full_listing.txt via tee
+ls -l | tee full_listing.txt
+
+
+# PART D
+# 1. Create directory, files, and set octal permissions
+mkdir permissions
+cd permissions
+touch secret.txt shared.txt public.txt
+
+chmod 600 secret.txt
+chmod 664 shared.txt
+chmod 777 public.txt
+
+# 2. Check umask, create new file, run ls -l and explain
+umask
+touch test_umask.txt
+ls -l test_umask.txt
+
+# Explanation for umask: 
+# When a new file is created, Linux gives it a base permission of 666 (rw-rw-rw-).
+# The system's umask value (commonly 0022) acts as a filter and is subtracted from the base.
+# For example: 666 - 022 = 644. This results in the default permission rw-r--r-- 
+# as seen in the 'ls -l' output.
