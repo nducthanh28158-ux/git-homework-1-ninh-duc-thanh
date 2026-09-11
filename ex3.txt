@@ -20,11 +20,20 @@ rm dir2/Hi.txt
 # Output of ls -li commands:
 
 $ ls -li
+total 1
+106397541196629084 -rw-r--r-- 1 ASUS 197121 0 Sep 11 07:52 Hi-sym
+ 34339947158711841 drwxr-xr-x 1 ASUS 197121 0 Sep 11 07:53 dir1/
+ 14355223812255281 drwxr-xr-x 1 ASUS 197121 0 Sep 11 07:54 dir2/
+ 47569271064100936 -rw-r--r-- 1 ASUS 197121 3 Sep 11 07:09 ex3.txt
 
 $ ls -li dir1
+total 0
+37999121855998023 -rw-r--r-- 2 ASUS 197121 0 Sep 11 07:52 Hi-hard
+
 $ ls -li dir2
 total 0
 37999121855998023 -rw-r--r-- 2 ASUS 197121 0 Sep 11 07:52 Hi-hard
+
 # PART C
 # 1. List /bin and /usr/bin, sort, remove duplicates, and count unique names
 ls /bin /usr/bin | sort | uniq | wc -l
